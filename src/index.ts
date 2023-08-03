@@ -5,7 +5,7 @@ import { pick } from "ramda";
 
 import logger from "./logger";
 import { ApiResponse } from "./types";
-import { normalizeKey, toEpochTimestamp, ensureArray } from "./utils";
+import { normalizeKey, toEpochTimestamp } from "./utils";
 import { version } from "../package.json";
 
 dotEnv.config();
