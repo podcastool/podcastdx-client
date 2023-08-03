@@ -43,7 +43,6 @@ interface PIApiEpisodeBase {
 /** Returned by episodeById */
 export interface PIApiEpisodeDetail extends PIApiEpisodeBase {
   feedTitle: string;
-  transcriptUrl: string | null;
   duration: number;
 }
 
@@ -51,6 +50,10 @@ export interface PIApiEpisodeDetail extends PIApiEpisodeBase {
 export interface PIApiEpisodeInfo extends PIApiEpisodeBase {
   duration: number;
   transcriptUrl: string | null;
+  /** At some point, we give up trying to process a feed and mark it as dead. This is usually after 1000 errors without a successful pull/parse cycle. Once the feed is marked dead, we only check it once per month. */
+  feedDead: number;
+  /** The internal PodcastIndex.org Feed ID this feed duplicates. May be null except in podcasts/dead. */
+  feedDuplicateOf: number | null;
 }
 
 /** Returned by episodesRandom */
@@ -133,6 +136,8 @@ export interface PIApiFeed extends PIApiFeedBase {
   crawlErrors: number;
   /** The number of errors we’ve encountered trying to parse the feed content. Errors here are things like not well-formed xml, bad character encoding, etc. We fix many of these types of issues on the fly when parsing. We only increment the errors count when we can’t fix it. */
   parseErrors: number;
+  /** Is feed marked as explicit */
+  explicit: boolean;
 }
 
 /** Returned by podcastBy* */

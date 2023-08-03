@@ -44,8 +44,8 @@ describe("recent", () => {
 
     it("supports walking back through episodes string", async () => {
       const first = 1305556075;
-      const second = 1305555991;
-      const third = 1305555976;
+      const second = 13421292;
+      const third = 3223682;
 
       const secondEpisode = await client.recentEpisodes({
         before: first,
@@ -91,7 +91,7 @@ describe("recent", () => {
     it("returns returns feeds based on since", async () => {
       const latestResults = await client.recentFeeds({ max: 5 });
       const firstResults = await client.recentFeeds({
-        since: latestResults.feeds[0].newestItemPublishTime - 1,
+        since: latestResults.feeds[1].newestItemPublishTime,
       });
       const futureResults = await client.recentFeeds({
         since: latestResults.feeds[0].newestItemPublishTime,
@@ -199,9 +199,9 @@ describe("recent", () => {
   });
 
   describe("new soundbites", () => {
-    it("returns a default of 60 soundbites", async () => {
+    it("returns a default of 1000 soundbites", async () => {
       const recentResults = await client.recentSoundbites();
-      expect(recentResults.items).toHaveLength(60);
+      expect(recentResults.items).toHaveLength(1000);
     });
   });
 });

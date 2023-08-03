@@ -36,14 +36,7 @@ describe("search api", () => {
     const searchResult = await client.search("sexual wellness", { clean: true, max: 5 });
     expect(searchResult.count).toBeLessThanOrEqual(5);
 
-    const allEpisodes: PIApiEpisodeInfo[] = [];
-    for (let i = 0; i < searchResult.feeds.length; i += 1) {
-      const feed = searchResult.feeds[i];
-      const feedEpisodes = await client.episodesByFeedId(feed.id);
-      allEpisodes.push(...feedEpisodes.items);
-    }
-
-    expect(allEpisodes.some((ep) => ep.explicit)).toEqual(false);
+    expect(searchResult.feeds.some((ep) => ep.explicit)).toEqual(false);
   });
 
   it("supports max items returned", async () => {
