@@ -4,14 +4,12 @@ The is a client for interacting with <https://podcastindex.org/>. In order for t
 
 This includes typescript types as well as JSDoc strings that should make interacting with the API easier.
 
-Optionally provide usage analytics back to me to help me improve the library. **If you do not provide this value, analytics will be sent. You must opt-out.**
-
 JSON Schema generated from the types contained in the project can be found at <https://github.com/RyanHirsch/podcastdx-client/tree/master/src/schemas>
 
 ## Installation
 
 ```sh
-npm -i podcastdx-client
+npm -i podcast-index-client
 ```
 
 ## Usage
