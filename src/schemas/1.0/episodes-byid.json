@@ -33,12 +33,6 @@
         "feedTitle": {
           "type": "string"
         },
-        "transcriptUrl": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
         "duration": {
           "type": "number"
         },
@@ -187,8 +181,7 @@
         "image",
         "link",
         "season",
-        "title",
-        "transcriptUrl"
+        "title"
       ]
     }
   },
