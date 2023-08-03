@@ -32,9 +32,17 @@ describe("podcasts api", () => {
       const searchResult = await client.podcastByUrl(feedUrl);
       expect(searchResult.feed).toEqual(feedById);
     });
-    it.skip("returns same object as byItunesId", async () => {
+    it("returns same object as byItunesId", async () => {
       const searchResult = await client.podcastByUrl(feedUrl);
-      expect(searchResult.feed).toEqual(feedByItunesId);
+      const {
+        explicit,
+        chash,
+        imageUrlHash,
+        itunesType,
+        medium,
+        ...actualResult
+      } = searchResult.feed;
+      expect(actualResult).toEqual(feedByItunesId);
     });
   });
 
@@ -44,13 +52,15 @@ describe("podcasts api", () => {
       expect(searchResult.status).toEqual(ApiResponse.Status.Success);
       expect(searchResult.feed).toHaveProperty("title", "Batman University");
     });
-    it.skip("returns same object as byUrl", async () => {
+    it("returns same object as byUrl", async () => {
       const searchResult = await client.podcastByItunesId(iTunesId);
-      expect(searchResult.feed).toEqual(feedByUrl);
+      const { explicit, chash, imageUrlHash, itunesType, medium, ...expectResult } = feedByUrl;
+      expect(searchResult.feed).toEqual(expectResult);
     });
-    it.skip("returns same object as byId", async () => {
+    it("returns same object as byId", async () => {
       const searchResult = await client.podcastByItunesId(iTunesId);
-      expect(searchResult.feed).toEqual(feedById);
+      const { explicit, chash, imageUrlHash, itunesType, medium, ...expectResult } = feedById;
+      expect(searchResult.feed).toEqual(expectResult);
     });
   });
 
@@ -64,9 +74,17 @@ describe("podcasts api", () => {
       const searchResult = await client.podcastById(feedId);
       expect(searchResult.feed).toEqual(feedByUrl);
     });
-    it.skip("returns same object as byItunesId", async () => {
+    it("returns same object as byItunesId", async () => {
       const searchResult = await client.podcastById(feedId);
-      expect(searchResult.feed).toEqual(feedByItunesId);
+      const {
+        explicit,
+        chash,
+        imageUrlHash,
+        itunesType,
+        medium,
+        ...acutalResult
+      } = searchResult.feed;
+      expect(acutalResult).toEqual(feedByItunesId);
     });
   });
 });

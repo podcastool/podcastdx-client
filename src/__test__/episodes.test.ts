@@ -35,8 +35,8 @@ describe("episodes api", () => {
       const searchResult = await client.episodesByFeedId(feedId);
       expect(searchResult.items.length).toBeGreaterThan(10);
     });
-    it.skip("returns all items for multiple feeds", async () => {
-      const altFeedResults = await client.episodesByFeedId(altFeedId);
+    it("returns all items for multiple feeds", async () => {
+      const altFeedResults = await client.episodesByFeedId(altFeedId, { max: 100 });
       const searchResult = await client.episodesByFeedId([feedId, altFeedId], { max: 100 });
       expect(searchResult.items.length).toEqual(
         altFeedResults.items.length + episodesByFeedId.length

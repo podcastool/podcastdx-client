@@ -145,6 +145,8 @@ export interface PIApiPodcast extends PIApiFeed {
   episodeCount: number;
   explicit: boolean;
   chash: string;
+  itunesType: string;
+  medium: string;
   value?: {
     model: { type: string; method: string; suggested: string };
     destinations: Array<{
