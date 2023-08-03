@@ -4,7 +4,7 @@ The is a client for interacting with <https://podcastindex.org/>. In order for t
 
 This includes typescript types as well as JSDoc strings that should make interacting with the API easier.
 
-JSON Schema generated from the types contained in the project can be found at <https://github.com/RyanHirsch/podcastdx-client/tree/master/src/schemas>
+JSON Schema generated from the types contained in the project can be found at <https://github.com/podcastool/podcastdx-client/tree/master/src/schemas>
 
 ## Installation
 
@@ -14,10 +14,10 @@ npm -i podcast-index-client
 
 ## Usage
 
-Auto-generated docs are available at <https://ryanhirsch.github.io/podcastdx-client/classes/_src_index_.podcastindexclient.html>
+Auto-generated docs are available at <https://podcastool.github.io/podcastdx-client/index.html>
 
 ```ts
-import PodcastIndexClient from "podcastdx-client";
+import PodcastIndexClient from "podcast-index-client";
 
 // assumes you have an your key and secret set as environment variables
 const client = new PodcastIndexClient({
