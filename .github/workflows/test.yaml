@@ -44,4 +44,11 @@ jobs:
         run: pnpm install
 
       - name: Test
-        run: pnpm tsc && pnpm test && pnpm validate
+        run: pnpm tsc && pnpm test -- --coverage && pnpm validate
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/lcov-report
+          files: ./coverage/clover.xml
