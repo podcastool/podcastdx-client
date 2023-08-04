@@ -41,5 +41,5 @@ jobs:
       - name: Test
         run: pnpm tsc && pnpm test && pnpm validate
         env:
-          API_KEY: ${{ secrets.API_KEY }}
-          API_SECRET: ${{ secrets.API_SECRET }}
+          API_KEY: ${{ env.API_KEY }}
+          API_SECRET: ${{ env.API_SECRET }}
