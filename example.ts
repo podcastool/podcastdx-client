@@ -3,7 +3,6 @@ import PodcastIndexClient from "./src";
 const client = new PodcastIndexClient({
   key: process.env.API_KEY!,
   secret: process.env.API_SECRET!,
-  enableAnalytics: true,
 });
 
 export async function log(thennable: Promise<unknown>): Promise<void> {

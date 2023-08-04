@@ -23,8 +23,6 @@ import PodcastIndexClient from "podcast-index-client";
 const client = new PodcastIndexClient({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET,
-  // opt-out of analytics collection
-  disableAnalytics: true,
 });
 
 client.search("javascript").then(console.log);

@@ -55,8 +55,6 @@ class PodcastIndexClient {
   }: {
     key?: string;
     secret?: string;
-    disableAnalytics?: boolean;
-    enableAnalytics?: boolean;
   } = {}) {
     if (!key || !secret) {
       throw new Error("Unable to initialize due to missing key or secret");
