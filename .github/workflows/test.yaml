@@ -6,11 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Create .env
-        run: |
-          touch .env
-          echo API_KEY=$API_KEY >> .env
-          echo API_SECRET=$API_SECRET >> .env
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -44,4 +39,8 @@ jobs:
         run: pnpm install
 
       - name: Test
-        run: pnpm tsc && pnpm test && pnpm validate
+        run: |
+          touch .env
+          echo API_KEY=$API_KEY >> .env
+          echo API_SECRET=$API_SECRET >> .env
+          pnpm tsc && pnpm test && pnpm validate
