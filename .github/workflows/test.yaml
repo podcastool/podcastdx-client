@@ -9,6 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Set env
+        uses: oNaiPs/secrets-to-env-action@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -40,6 +45,3 @@ jobs:
 
       - name: Test
         run: pnpm tsc && pnpm test && pnpm validate
-        env:
-          API_KEY: ${{ env.API_KEY }}
-          API_SECRET: ${{ env.API_SECRET }}
