@@ -5,10 +5,7 @@ import { PIApiEpisodeInfo } from "../types";
 describe("search api", () => {
   let client: PodcastIndexClient;
   beforeAll(() => {
-    client = new PodcastIndexClient({
-      key: process.env.API_KEY ?? "",
-      secret: process.env.API_SECRET ?? "",
-    });
+    client = new PodcastIndexClient();
   });
 
   it("supports basic query", async () => {

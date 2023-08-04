@@ -20,10 +20,7 @@ describe("episodes api", () => {
   const episodeId = 16795090;
 
   beforeAll(async () => {
-    client = new PodcastIndexClient({
-      key: process.env.API_KEY ?? "",
-      secret: process.env.API_SECRET ?? "",
-    });
+    client = new PodcastIndexClient();
     episodesByFeedUrl = await (await client.episodesByFeedUrl(feedUrl)).items;
     episodesByFeedId = await (await client.episodesByFeedId(feedId)).items;
     episodesByItunesId = await (await client.episodesByItunesId(iTunesId)).items;

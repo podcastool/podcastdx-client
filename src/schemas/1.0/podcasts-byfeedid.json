@@ -50,6 +50,12 @@
         "chash": {
           "type": "string"
         },
+        "itunesType": {
+          "type": "string"
+        },
+        "medium": {
+          "type": "string"
+        },
         "value": {
           "type": "object",
           "properties": {
@@ -258,6 +264,7 @@
         "id",
         "image",
         "itunesId",
+        "itunesType",
         "language",
         "lastCrawlTime",
         "lastGoodHttpStatusTime",
@@ -265,6 +272,7 @@
         "lastParseTime",
         "lastUpdateTime",
         "link",
+        "medium",
         "originalUrl",
         "ownerName",
         "parseErrors",
