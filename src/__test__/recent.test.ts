@@ -6,10 +6,7 @@ describe("recent", () => {
   let client: PodcastIndexClient;
 
   beforeAll(async () => {
-    client = new PodcastIndexClient({
-      key: process.env.API_KEY ?? "",
-      secret: process.env.API_SECRET ?? "",
-    });
+    client = new PodcastIndexClient();
   });
 
   describe("episodes", () => {

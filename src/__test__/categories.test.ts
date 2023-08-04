@@ -3,10 +3,7 @@ import PodcastIndexClient from "../index";
 describe("categories api", () => {
   let client: PodcastIndexClient;
   beforeAll(() => {
-    client = new PodcastIndexClient({
-      key: process.env.API_KEY ?? "",
-      secret: process.env.API_SECRET ?? "",
-    });
+    client = new PodcastIndexClient();
   });
 
   it("response has Technology", async () => {
