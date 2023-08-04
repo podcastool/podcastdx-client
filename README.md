@@ -1,5 +1,7 @@
 # Podcast Index Client
 
+[![Test](https://github.com/podcastool/podcastdx-client/workflows/Test/badge.svg?branch=master)](https://github.com/podcastool/podcastdx-client/actions/workflows/test.yaml) [![npm version](https://badge.fury.io/js/podcast-index-client.svg)](https://badge.fury.io/js/podcast-index-client)
+
 The is a client for interacting with <https://podcastindex.org/>. In order for this to be useful, you need to get a developer `API KEY` and `API SECRET` from <https://api.podcastindex.org>
 
 This includes typescript types as well as JSDoc strings that should make interacting with the API easier.
