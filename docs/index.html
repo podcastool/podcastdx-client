@@ -61,9 +61,12 @@
 				<a href="#podcast-index-client" id="podcast-index-client" style="color: inherit; text-decoration: none;">
 					<h1>Podcast Index Client</h1>
 				</a>
+				<p><a href="https://github.com/podcastool/podcastdx-client/actions/workflows/test.yaml"><img src="https://github.com/podcastool/podcastdx-client/workflows/Test/badge.svg?branch=master" alt="Test"></a>
+					<a href="https://badge.fury.io/js/podcast-index-client"><img src="https://badge.fury.io/js/podcast-index-client.svg" alt="npm version"></a>
+				<a href="https://codecov.io/gh/podcastool/podcastdx-client"><img src="https://codecov.io/gh/podcastool/podcastdx-client/branch/master/graph/badge.svg?token=BW5JV2GQS1" alt="codecov"></a></p>
 				<p>The is a client for interacting with <a href="https://podcastindex.org/">https://podcastindex.org/</a>. In order for this to be useful, you need to get a developer <code>API KEY</code> and <code>API SECRET</code> from <a href="https://api.podcastindex.org">https://api.podcastindex.org</a></p>
 				<p>This includes typescript types as well as JSDoc strings that should make interacting with the API easier.</p>
-				<p>JSON Schema generated from the types contained in the project can be found at <a href="https://github.com/RyanHirsch/podcastdx-client/tree/master/src/schemas">https://github.com/RyanHirsch/podcastdx-client/tree/master/src/schemas</a></p>
+				<p>JSON Schema generated from the types contained in the project can be found at <a href="https://github.com/podcastool/podcastdx-client/tree/master/src/schemas">https://github.com/podcastool/podcastdx-client/tree/master/src/schemas</a></p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -72,15 +75,13 @@
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<p>Auto-generated docs are available at <a href="https://ryanhirsch.github.io/podcastdx-client/classes/_src_index_.podcastindexclient.html">https://ryanhirsch.github.io/podcastdx-client/classes/_src_index_.podcastindexclient.html</a></p>
-				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">PodcastIndexClient</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;podcastdx-client&quot;</span><span style="color: #000000">;</span>
+				<p>Auto-generated docs are available at <a href="https://podcastool.github.io/podcastdx-client/index.html">https://podcastool.github.io/podcastdx-client/index.html</a></p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">PodcastIndexClient</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;podcast-index-client&quot;</span><span style="color: #000000">;</span>
 
 <span style="color: #008000">// assumes you have an your key and secret set as environment variables</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">PodcastIndexClient</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #001080">key:</span><span style="color: #000000"> </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #001080">env</span><span style="color: #000000">.</span><span style="color: #0070C1">API_KEY</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">secret:</span><span style="color: #000000"> </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #001080">env</span><span style="color: #000000">.</span><span style="color: #0070C1">API_SECRET</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #008000">// opt-out of analytics collection</span>
-<span style="color: #000000">  </span><span style="color: #001080">disableAnalytics:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">search</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;javascript&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #001080">log</span><span style="color: #000000">);</span>
@@ -122,9 +123,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/logger.html">logger</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/types.html">types</a>
