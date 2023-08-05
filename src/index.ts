@@ -3,7 +3,6 @@ import fetch from "node-fetch";
 import dotEnv from "dotenv";
 import { pick } from "ramda";
 
-import logger from "./logger";
 import { ApiResponse } from "./types";
 import { normalizeKey, toEpochTimestamp } from "./utils";
 import { version } from "../package.json";
@@ -92,7 +91,6 @@ class PodcastIndexClient {
     };
     const url = `${this.apiUrl}${endpoint}${queryString ? `?${queryString}` : ``}`;
 
-    logger.log(url);
     return fetch(url, options).then((res) => {
       if (res.status >= 200 && res.status < 300) {
         return res.json();
